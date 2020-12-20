@@ -11,8 +11,8 @@ class CountdownTimer {
   }
 
   count() {
-    this.onCountTime();
-    setInterval(() => {this.onCountTime()}, 1000)
+    this.counterTime();
+    setInterval(() => {this.counterTime()}, 1000)
   };
 
   getTimeComponents(time) {
@@ -34,7 +34,7 @@ class CountdownTimer {
     this.secs.textContent = secs;
   };
   
-  onCountTime() {
+  counterTime() {
     let time = this.targetDate - Date.now();
     const times = this.getTimeComponents(time);
     this.updateClock(times);
